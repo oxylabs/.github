@@ -258,7 +258,7 @@ Setup for Claude Desktop and Cursor, the full tool list, and troubleshooting: [M
 
 ### More AI integrations
 
-[LangChain[(https://developers.oxylabs.io/ai-workflows/langchain) and [LlamaIndex](https://developers.oxylabs.io/ai-workflows/llamaindex) integrations work with the Web Scraper API to pull web data into LLM workflows.
+[LangChain](https://developers.oxylabs.io/ai-workflows/langchain) and [LlamaIndex](https://developers.oxylabs.io/ai-workflows/llamaindex) integrations work with the Web Scraper API to pull web data into LLM workflows.
 
 ## Custom and open-source solutions
 
