@@ -164,7 +164,7 @@ Everything you need, in one place. Start with the repository that matches your g
 
 | Repository | What it is | Best for |
 | --- | --- | --- |
-| [web-api](https://github.com/oxylabs/Web-API/) | One REST API with `/search` and `/scrape` endpoints for live web access | Giving applications and AI agents live search and page reading |
+| [web-api](https://github.com/oxylabs/web-api/) | One REST API with `/search` and `/scrape` endpoints for live web access | Giving applications and AI agents live search and page reading |
 | [agent-skills](https://github.com/oxylabs/agent-skills) | Official Agent Skills for Oxylabs products: `proxies`, `agent-browser`, `web-unblocker`, `video-data`, and `web-scraper-api` | Teaching Claude Code, Cursor, and other AI coding assistants to use Oxylabs correctly |
 | [agent-browser](https://github.com/oxylabs/agent-browser) | Overview and guide for Agent Browser: remote cloud browser sessions with integrated residential proxies, CAPTCHA handling, and JavaScript rendering | Browser automation, testing, and AI agents that need a real browser |
 | [oxylabs-mcp](https://github.com/oxylabs/oxylabs-mcp) | MCP server for Web Scraper API, also hosted at `mcp.oxylabs.io` | Letting assistants scrape any URL, Google Search, and Amazon |
