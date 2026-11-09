@@ -158,7 +158,7 @@ Large-scale web access comes down to a few hard problems. Here is how each Oxyla
 
 - **A new way to give agents the live web.** The Web API pairs `/search` and `/scrape` in one REST interface, with Markdown, HTML, JSON, or screenshot output and AI Parsing for structured data.
 - **Global coverage.** 177+ million IPs in 195 countries, with granular geo-targeting.
-- **The right tool for the job.** Residential, mobile, ISP, and datacenter proxies, plus managed products (Web API, Web Unblocker, Agent Browser, Web Scraper API) when you would rather not run the plumbing yourself.
+- **The right tool for the job.** Residential, mobile, ISP, and datacenter proxies, plus managed products (Web API, Web Unblocker, Agent Browser) when you would rather not run the plumbing yourself.
 - **AI-ready.** Agent Skills, MCP servers, and LangChain and LlamaIndex integrations.
 - **Easy to try.** A $5 welcome credit, a shared credit balance, and quick-start guides that get you to a first request in minutes.
 - **Security and compliance you can point to.** Our information security management system is certified to ISO/IEC 27001:2022 (for the scope set out in our Trust Center), and Web Unblocker has completed an independent SOC 2 Type 2 audit. See [Trust and responsible use](https://claude.ai/chat/2adf7d51-6b56-4142-b92e-479dae35eba9#trust-and-responsible-use).
@@ -259,7 +259,6 @@ Each product has its own MCP server and its own credentials. Set up only the one
 | Product | MCP server | Setup |
 | --- | --- | --- |
 | Web API | `oxylabs-web-api-mcp` | Self-hosted, local or HTTP (see Web API for AI agents above) |
-| Web Scraper API | Oxylabs MCP server, hosted at `mcp.oxylabs.io` | Hosted |
 | Agent Browser | `hb-mcp` | Local |
 
 Setup for Claude Desktop and Cursor, the full tool list, and troubleshooting: [MCP docs](https://developers.oxylabs.io/ai-workflows/mcp).
