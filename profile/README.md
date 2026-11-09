@@ -6,14 +6,14 @@
 
 # Oxylabs
 
-Welcome to Oxylabs on GitHub.
+Welcome to Oxylabs on GitHub!
 #### Fresh web data for grounding AI agents, and for every team that depends on real-time public data.
 Whether you're doing web scraping at scale, routing traffic through proxies, or giving an AI agent a window onto the live web, you're in the right place.
 
 <a href="https://oxylabs.io"><img src="https://img.shields.io/badge/🚀_Get_Started-FF6B35?style=for-the-badge" alt="Get started"></a>
 <a href="https://developers.oxylabs.io"><img src="https://img.shields.io/badge/📚_Documentation-4A90E2?style=for-the-badge" alt="Documentation"></a>
 <a href="https://dashboard.oxylabs.io"><img src="https://img.shields.io/badge/📊_Dashboard-2EA44F?style=for-the-badge" alt="Dashboard"></a>
-<a href="https://discord.gg/YOUR-INVITE"><img src="https://img.shields.io/badge/💬_Discord-5865F2?style=for-the-badge" alt="Discord"></a>
+<a href="https://discord.gg/Pds3gBmKMH"><img src="https://img.shields.io/badge/💬_Discord-5865F2?style=for-the-badge" alt="Discord"></a>
 <a href="https://www.youtube.com/@oxylabs"><img src="https://img.shields.io/badge/▶️_YouTube-FF0000?style=for-the-badge" alt="YouTube"></a>
 
 </div>
@@ -28,14 +28,14 @@ Public web data powers price tracking, content monitoring, analytics, and AI. Ge
 
 Oxylabs gives you the tools and infrastructure to do that. You choose how much help you want:
 
-| If you say... | Oxylabs gives you... |
-| --- | --- |
-| *"My app or AI agent needs to search the live web and read pages."* | The newest Oxylabs product, one REST API with two endpoints [Web API](https://oxylabs.io/products/web-api/). |
-| *"I already have a scraper. I need the roads to the web."* | A large network of IP addresses to route your own requests through [Proxies](https://oxylabs.io/products). |
-| *"My pipeline keeps getting stopped."* | An AI-powered proxy solution that manages the hard parts for you [Web Unblocker](https://oxylabs.io/products/web-unblocker). |
-| *"I need a real browser, or my AI agent does."* | A cloud-based browser you control remotely [Agent Browser](https://oxylabs.io/products/agent-browser). |
-| *"I'm building with an AI coding assistant."* | Official [Agent Skills](https://developers.oxylabs.io/ai-workflows/agent-skills) and an [MCP server](https://developers.oxylabs.io/ai-workflows/mcp). |
-| *"Just give me the data."* | An all-in-one, fully managed data collection service [Web Scraper API](https://developers.oxylabs.io/products/web-scraper-api). |
+| If you say...                                                       | Oxylabs gives you...                                                                                                                                |
+|---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| *"My app or AI agent needs to search the live web and read pages."* | The newest Oxylabs product: one REST API with two endpoints ([Web API](https://oxylabs.io/products/web-api/)).                                       |
+| *"I need to scrape pages and get clean data back."*                 | Web scraping through one REST call ([Web API `/scrape` endpoint](https://developers.oxylabs.io/products/web-api/scrape)).                            |
+| *"I already have a scraper. I need the roads to the web."*          | A large network of IP addresses to route your own requests through ([Proxies](https://oxylabs.io/products)).                                        |
+| *"My pipeline keeps getting stopped."*                              | An AI-powered proxy solution that manages the hard parts for you ([Web Unblocker](https://oxylabs.io/products/web-unblocker)).                      |
+| *"I need a real browser, or my AI agent does."*                     | A cloud-based browser you control remotely ([Agent Browser](https://oxylabs.io/products/agent-browser)).                                            |
+| *"I'm building with an AI coding assistant."*                       | Official [Agent Skills](https://developers.oxylabs.io/ai-workflows/agent-skills) and [MCP servers](https://developers.oxylabs.io/ai-workflows/mcp). |
 
 ## Built for you
 
@@ -48,80 +48,86 @@ Oxylabs gives you the tools and infrastructure to do that. You choose how much h
 
 ### Web API
 
-An all-in-one REST API for web search and page data collection. The Oxylabs [Web API](https://oxylabs.io/products/web-api) gives applications and AI agents live access to the open web through a unified REST interface.
+An all-in-one REST API for web search and page data collection, and the home of Oxylabs web scraping. The Oxylabs [Web API](https://developers.oxylabs.io/products/web-api) gives applications and AI agents live access to the open web through a unified REST interface.
 
 Finding the right, fresh pages is one problem. Reading them reliably is another. Web API handles both. It takes care of JavaScript rendering, bot traffic challenges, proxy rotation, and geo-targeting, and exposes separate endpoints for the different stages of web data acquisition:
 
-| Endpoint | What it does | You send |
-| --- | --- | --- |
-| `/search` | Discovers and ranks organic web results from the live web | A keyword or query |
-| `/scrape` | Renders a page and extracts its data as Markdown, HTML, JSON, or a screenshot | A page URL |
+| Endpoint | What it does | You send | Docs |
+|---|---|---|---|
+| `/search` | Discovers and ranks organic web results from the live web | A keyword or query | [/search](https://developers.oxylabs.io/products/web-api/search) |
+| `/scrape` | Web scraping: renders a page and extracts its data as Markdown, HTML, JSON, or a screenshot | A page URL | [/scrape](https://developers.oxylabs.io/products/web-api/scrape) |
 
-**What's inside:**
+**Search to find, scrape to read.** Search results are snippets, so anything you need to be accurate about comes from a `/scrape`.
+
+#### `/search`: find pages on the live web
+
+Returns ranked organic web results for a keyword or query. Each result includes a title, a URL, a short snippet, and its position. Use it to discover the pages worth reading, then read them with `/scrape`. Full parameters: [/search docs](https://developers.oxylabs.io/products/web-api/search).
+
+#### `/scrape`: web scraping for any page
+
+Fetches a page by URL and handles JavaScript rendering, proxy rotation, access challenges, and geo-targeting.
 
 - **Multiple output formats.** Request Markdown, HTML, JSON, or a screenshot, and more than one in a single request.
-- **Dedicated scrapers.** Target-specific endpoints with structured field extraction, covering search engines (Google, Bing), commerce sites (Amazon, Walmart, Target, and more), media (YouTube), and AI platforms (ChatGPT, Gemini, Perplexity).
-- **AI Parsing.** Extract structured JSON from any page in one request, using a natural-language prompt or a JSON Schema.
-- **Flexible delivery.** Real-time responses, async jobs with polling or callbacks, cloud storage delivery, and batch requests.
-- **Endpoint Discovery.** List all up-to-date scrape endpoints and their parameters at runtime instead of hardcoding them.
-- **Playground.** Build and test Search and Scrape requests, preview results, and export ready-to-use code.
-- **Built for AI agents.** Connect it with Agent Skills, an MCP server, or a one-prompt integration. See Agent Skills and MCP server.
+- **JavaScript rendering and geo-targeting.** Render single-page apps before capture, and route requests through a chosen country for regional pricing, language, and content.
+- **AI Parsing.** Extract structured JSON from any page in one request, using a natural-language prompt or a JSON Schema. Check [here](https://developers.oxylabs.io/products/web-api/scrape/ai-parsing).
+- **Dedicated scrapers.** Target-specific endpoints with structured field extraction, covering search engines (Google, Bing), commerce sites (Amazon, Walmart, Target, and more), media (YouTube), and AI platforms (ChatGPT, Gemini, Perplexity). Learn more [here](https://developers.oxylabs.io/products/web-api/scrape/dedicated-scrapers).
+- **Flexible delivery.** Realtime responses, async single jobs, and async batch, with results by polling, webhook, or cloud storage delivery. More information [here](https://developers.oxylabs.io/products/web-api/scrape/delivery-modes).
+- **Endpoint Discovery.** List all up-to-date scrape endpoints and their parameters at runtime instead of hardcoding them. [More info](https://developers.oxylabs.io/products/web-api/scrape/endpoint-discovery).
 
-Pick it when you want to give an AI agent live web search and structured data, without managing proxies. Web API is billed per result or search.
+Full parameters and output formats: [/scrape docs](https://developers.oxylabs.io/products/web-api/scrape).
 
-### Proxies, including Residential Proxies
+**Built for AI agents.** Try requests in the [Web API Playground](https://developers.oxylabs.io/products/web-api/playground), or connect Web API to an agent with Agent Skills, an MCP server, or a one-prompt integration. See Agent Skills and MCP servers below.
 
-Route your own requests through 177+ million IPs in 195 countries. Oxylabs Residential Proxies use real IP addresses provided by Internet Service Providers (ISPs) attached to physical devices globally. They rotate automatically with every request and support country, city, state, ZIP code, ASN, and session targeting.
+**Pick it when** you want live web search, web scraping, and structured data for an application or AI agent, without managing proxies. Web API is billed per result or search.
+
+Repository: [oxylabs/web-api](https://github.com/oxylabs/web-api) · Docs: [Web API](https://developers.oxylabs.io/products/web-api) · [Quick start](https://developers.oxylabs.io/get-started/quick-start-web-api) · [API reference](https://developers.oxylabs.io/api-reference/overview) · [For Agents](https://developers.oxylabs.io/products/web-api/for-agents)
+
+### Proxies: residential, mobile, ISP, datacenter, and more
+
+Match the IP to the job. Oxylabs offers a full range of proxy types, so you can route your own requests through **177+ million IPs in 195 countries**: residential and mobile IPs from real devices, static ISP IPs, and fast datacenter IPs. Dedicated options give you IPs that are not shared with anyone else, and High-Bandwidth Proxies handle traffic-intensive work.
 
 | Proxy type | In plain English | Pick it when you want to... |
-| --- | --- | --- |
+|---|---|---|
 | [Residential Proxies](https://oxylabs.io/products/residential-proxy-pool) | Real ISP-provided IPs from around the world, rotating or sticky | Run your own scraper through residential IPs with precise geo-targeting |
 | [Mobile Proxies](https://oxylabs.io/products/mobile-proxies) | IPs from real mobile devices, 140+ locations | See what a mobile user sees |
 | [ISP Proxies](https://oxylabs.io/products/isp-proxies) and [Dedicated ISP Proxies](https://oxylabs.io/products/dedicated-isp-proxies) | Static IPs from premium ASN providers. With Dedicated ISP Proxies the IPs are private and you choose the ASN | Keep stable sessions on demanding targets |
-| [Datacenter Proxies](https://oxylabs.io/products/datacenter-proxies) | Fast, cost-effective IPs. Dedicated ones are not shared with anyone else | Scrape at high volume where speed and price matter most |
+| [Datacenter Proxies](https://oxylabs.io/products/datacenter-proxies) and [Dedicated Datacenter Proxies](https://developers.oxylabs.io/products/proxies/dedicated-datacenter-proxies) | Fast, cost-effective IPs. Dedicated ones are not shared with anyone else | Scrape at high volume where speed and price matter most |
 | [High-Bandwidth Proxies](https://oxylabs.io/products/high-bandwidth-proxies) | Proxies for traffic-intensive tasks | Handle jobs such as video and audio scraping |
 
-Repository: [oxylabs/residential-proxies](https://github.com/oxylabs/residential-proxies) · Free to try: [oxylabs/free-proxy-list](https://github.com/oxylabs/free-proxy-list)
+Docs: [Proxies overview](https://developers.oxylabs.io/products/proxies) · Repositories: [oxylabs/residential-proxies](https://github.com/oxylabs/residential-proxies) (Residential Proxies examples) · Free to try: [oxylabs/free-proxy-list](https://github.com/oxylabs/free-proxy-list)
 
 ### Agent Browser
 
 [Agent Browser](https://oxylabs.io/products/agent-browser) is a cloud-based headless browser with built-in adaptive security, CAPTCHA management, and residential proxies. Run and control remote browser instances for automation, testing, and web scraping without managing them locally. Connect with Playwright, Puppeteer, or any Chrome DevTools Protocol (CDP) library, including AI agent frameworks such as Stagehand and browser-use.
 
-Repository: [oxylabs/agent-browser](https://github.com/oxylabs/agent-browser) · Docs: [Agent Browser](https://developers.oxylabs.io)
+Repository: [oxylabs/agent-browser](https://github.com/oxylabs/agent-browser) · Docs: [Agent Browser](https://developers.oxylabs.io/products/agent-browser)
 
 ### Web Unblocker
 
 Oxylabs' [Web Unblocker](https://oxylabs.io/products/web-unblocker) is an AI-powered proxy solution that manages the request process so you can extract public data even from the most difficult websites. It is not a regular proxy: it manages proxy type selection, browser fingerprint generation, retries, sessions, and JavaScript rendering for you. Oxylabs documentation describes it as delivering a much higher success rate than regular proxies.
 
-Repository: [oxylabs/web-unblocker](https://github.com/oxylabs/web-unblocker) · Docs: [Web Unblocker](https://developers.oxylabs.io)
+Repository: [oxylabs/web-unblocker](https://github.com/oxylabs/web-unblocker) · Docs: [Web Unblocker](https://developers.oxylabs.io/products/web-unblocker)
 
-### Web Scraper API (Classic)
+### Agent Skills and MCP servers
 
-Retrieve web pages through an all-in-one, fully managed data collection infrastructure. Send a request, get your data back. For supported websites such as Amazon and Google, the API can return structured JSON instead of raw HTML.
+Official Agent Skills teach AI coding assistants how to configure and use Oxylabs products accurately. MCP servers give MCP-compatible assistants tools they can call directly: live web search and scraping through Web API, and a remote Agent Browser they can drive.
 
-Repository: [oxylabs/web-scraper-api](https://github.com/oxylabs/web-scraper-api) · Docs: [Web Scraper API](https://developers.oxylabs.io)
-
-### Agent Skills and MCP server
-
-Official Agent Skills teach AI coding assistants how to configure and use Oxylabs products accurately. 
-MCP servers give MCP-compatible assistants tools they can call directly: live web search and scraping through Web API, scraping of any URL, Google Search, and Amazon through Web Scraper API, and a remote Agent Browser they can drive.
-
-Repositories: [oxylabs/web-api-skills](https://github.com/oxylabs/web-api-skills) · [oxylabs/agent-skills](https://github.com/oxylabs/agent-skills) · [oxylabs/oxylabs-mcp](https://github.com/oxylabs/oxylabs-mcp) · [oxylabs/oxylabs-ab-mcp](https://github.com/oxylabs/oxylabs-ab-mcp)
-
+Repositories: [oxylabs/web-api-skills](https://github.com/oxylabs/web-api-skills) · [oxylabs/web-api-mcp](https://github.com/oxylabs/web-api-mcp) · [oxylabs/agent-skills](https://github.com/oxylabs/agent-skills) · [oxylabs/oxylabs-ab-mcp](https://github.com/oxylabs/oxylabs-ab-mcp)
 ## Which product should you use?
 
 Start with your goal. This table follows the guidance in the Oxylabs [help center](https://developers.oxylabs.io/help-center/most-popular-questions/how-do-i-choose-the-right-product).
 
 | If you want to... | Choose |
-| --- | --- |
-| Give an AI agent live web search and structured data, without managing proxies | [Web API](https://developers.oxylabs.io/products/web-api) (`/search` and `/scrape` endpoints) |
+|---|---|
+| Find fresh, relevant pages on the live web for an app or AI agent | [Web API `/search`](https://developers.oxylabs.io/products/web-api/search) |
+| Scrape any page, with JavaScript rendering, geo-targeting, and Markdown, HTML, JSON, or screenshot output | [Web API `/scrape`](https://developers.oxylabs.io/products/web-api/scrape) |
+| Get structured data from Google, Amazon, YouTube, Bing, and more | [Web API dedicated scrapers](https://developers.oxylabs.io/products/web-api/scrape/dedicated-scrapers) |
 | Run your own scraper through residential IPs with precise geo-targeting | [Residential Proxies](https://developers.oxylabs.io/products/proxies/residential-proxies) |
 | See what a mobile user sees | [Mobile Proxies](https://developers.oxylabs.io/products/proxies/mobile-proxies) |
 | Keep stable sessions on demanding targets | [ISP Proxies](https://developers.oxylabs.io/products/proxies/isp-proxies) or [Dedicated ISP Proxies](https://developers.oxylabs.io/products/proxies/dedicated-isp-proxies) |
 | Scrape at high volume where speed and price matter most | [Datacenter Proxies](https://developers.oxylabs.io/products/proxies/datacenter-proxies) or [Dedicated Datacenter Proxies](https://developers.oxylabs.io/products/proxies/dedicated-datacenter-proxies) |
 | Automate a browser, or give an AI agent one | [Agent Browser](https://developers.oxylabs.io/products/agent-browser) |
-| Get reliable access to complex sites with automated request management | [Web Unblocker](https://developers.oxylabs.io/products/web-unblocker) |
-| Retrieve web pages through a fully managed, all-in-one service | [Web Scraper API (Classic)](https://developers.oxylabs.io/products/web-scraper-api) |
+| Get reliable access to complex sites with automated request management | [Web Unblocker](https://developers.oxylabs.io/products/web-unblocker) |                                       |
 
 
 > [!Tip]
@@ -134,20 +140,20 @@ Start with your goal. This table follows the guidance in the Oxylabs [help cente
 Large-scale web access comes down to a few hard problems. Here is how each Oxylabs product family approaches them.
 
 | The challenge | How Oxylabs approaches it |
-| --- | --- |
-| **Finding and reading the live web** | Web API separates the stages: `/search` discovers and ranks results, `/scrape` renders and extracts pages, with rendering, proxy rotation, and geo-targeting handled for you |
+|---|---|
+| **Finding and reading the live web** | Web API separates the stages: [`/search`](https://developers.oxylabs.io/products/web-api/search) discovers and ranks results, [`/scrape`](https://developers.oxylabs.io/products/web-api/scrape) renders and extracts pages, with rendering, proxy rotation, and geo-targeting handled for you |
 | **Network routing:** reaching sites from the right place | A proxy network of 177+ million IPs in 195 countries, in residential, mobile, ISP, and datacenter flavors, with targeting down to country, city, state, ZIP code, ASN, and coordinates |
 | **Access reliability:** getting a good response consistently | Web Unblocker manages proxy type, browser fingerprints, retries, sessions, and JavaScript rendering for you |
-| **Flagging resistance:** pages that fight automation | Agent Browser combines adaptive security, CAPTCHA management, and residential proxies in one remote browser |
-| **Fitting into AI workflows** | Official Agent Skills and an MCP server ship alongside the products |
+| **Resilience to access interruptions:** pages that fight automation | Agent Browser combines adaptive security, CAPTCHA management, and residential proxies in one remote browser |
+| **Fitting into AI workflows** | Official Agent Skills and MCP servers ship alongside the products |                                                                                                            |
 
 **What sets the platform apart**
 
-- **You choose your level of control.** Use your own tools powered by the Oxylabs proxy network, or use the all-in-one API and start scraping right away without building your own infrastructure.
+- **You choose your level of control.** Use your own tools powered by the Oxylabs proxy network, or use Web API and start scraping right away without building your own infrastructure.
 - **One credit balance across every product.** Usage from all products comes out of the same balance. You can try more than one product before you commit, and you can set a spending limit per product instance.
 - **Built to work with AI assistants.** With an Agent Skill installed, your assistant writes accurate connection strings, request payloads, and automation code without syntax or parameter hallucinations.
-- **Integration guides** for the tools you already use, from Playwright, Puppeteer, Scrapy, and Selenium to LangChain, LlamaIndex, and Postman.
-
+- **Integration guides** for the tools you already use, such as Playwright, Puppeteer, Scrapy, and Selenium.
+  
 ## Why choose Oxylabs?
 
 - **A new way to give agents the live web.** The Web API pairs `/search` and `/scrape` in one REST interface, with Markdown, HTML, JSON, or screenshot output and AI Parsing for structured data.
@@ -163,15 +169,15 @@ Large-scale web access comes down to a few hard problems. Here is how each Oxyla
 Everything you need, in one place. Start with the repository that matches your goal.
 
 | Repository | What it is | Best for |
-| --- | --- | --- |
-| [web-api](https://github.com/oxylabs/web-api/) | One REST API with `/search` and `/scrape` endpoints for live web access | Giving applications and AI agents live search and page reading |
-| [agent-skills](https://github.com/oxylabs/agent-skills) | Official Agent Skills for Oxylabs products: `proxies`, `agent-browser`, `web-unblocker`, `video-data`, and `web-scraper-api` | Teaching Claude Code, Cursor, and other AI coding assistants to use Oxylabs correctly |
+|---|---|---|
+| [web-api](https://github.com/oxylabs/web-api/) | One REST API with `/search` and `/scrape` endpoints for live web access and web scraping | Giving applications and AI agents live search, page reading, and web scraping |
+| [web-api-skills](https://github.com/oxylabs/web-api-skills) | Agent Skills for the Oxylabs Web API: research method, API mechanics, and migration help | Teaching AI agents to search, read, and cite the web with Web API |
+| [web-api-mcp](https://github.com/oxylabs/web-api-mcp) | MCP server for the Oxylabs Web API (`oxylabs-web-api-mcp`) | Giving MCP-compatible assistants search, scrape, and extract tools |
+| [agent-skills](https://github.com/oxylabs/agent-skills) | Official Agent Skills for Oxylabs products: `proxies`, `agent-browser`, and `web-unblocker` | Teaching Claude Code, Cursor, and other AI coding assistants to use Oxylabs correctly |
 | [agent-browser](https://github.com/oxylabs/agent-browser) | Overview and guide for Agent Browser: remote cloud browser sessions with integrated residential proxies, CAPTCHA handling, and JavaScript rendering | Browser automation, testing, and AI agents that need a real browser |
-| [oxylabs-mcp](https://github.com/oxylabs/oxylabs-mcp) | MCP server for Web Scraper API, also hosted at `mcp.oxylabs.io` | Letting assistants scrape any URL, Google Search, and Amazon |
 | [oxylabs-ab-mcp](https://github.com/oxylabs/oxylabs-ab-mcp) | MCP server for Agent Browser | Giving MCP-compatible assistants a remote browser |
 | [residential-proxies](https://github.com/oxylabs/residential-proxies) | Rotating Residential Proxies: code examples and general information | Running your own scraper through residential IPs |
 | [web-unblocker](https://github.com/oxylabs/web-unblocker) | Web Unblocker repository | Reaching difficult sites without managing the details |
-| [web-scraper-api](https://github.com/oxylabs/web-scraper-api) | Overview and guide for Web Scraper API | Fully managed, all-in-one data collection |
 
 ## Common use cases
 
@@ -184,23 +190,26 @@ Across products, people use Oxylabs for:
 
 And by need:
 
-| I want to... | Start with |
-| --- | --- |
-| Give an AI assistant a remote browser to navigate pages, click, fill forms, and take screenshots | [Agent Browser](https://developers.oxylabs.io/products/agent-browser) with the [MCP server](https://github.com/oxylabs/oxylabs-ab-mcp) |
-| Have my AI coding assistant write correct Oxylabs code | [Agent Skills](https://github.com/oxylabs/agent-skills) |
-| Automate or test a website with Playwright or Puppeteer | [Agent Browser](https://developers.oxylabs.io/products/agent-browser) |
-| View a site as a visitor from a specific country, city, or ZIP code would | [Residential Proxies](https://developers.oxylabs.io/products/proxies/residential-proxies) |
-| Reach a site that keeps interrupting my existing scraper | [Web Unblocker](https://developers.oxylabs.io/products/web-unblocker) |
-| Collect YouTube metadata, subtitles, search results, or channel data, or download video and audio | The `video-data` skill in [Agent Skills](https://github.com/oxylabs/agent-skills) |
-| Connect Oxylabs to LLM workflows | [LangChain](https://developers.oxylabs.io/ai-workflows/langchain) and [LlamaIndex](https://developers.oxylabs.io/ai-workflows/llamaindex) integrations |
-| Get structured data from supported targets without building a parser | [Web Scraper API](https://developers.oxylabs.io/products/web-scraper-api) |
+| I want to...                                                                      | Start with                                                                                                                                                  |
+|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Let an app or AI agent search the live web and read the pages it finds            | [Web API](https://developers.oxylabs.io/products/web-api) (`/search` then `/scrape`)                                                                        |
+| Scrape any page as clean Markdown for an LLM or RAG pipeline                      | [Web API `/scrape`](https://developers.oxylabs.io/products/web-api/scrape) with `markdown` output                                                           |
+| Get structured JSON from any page using a plain-English prompt or a schema        | [Web API AI Parsing](https://developers.oxylabs.io/products/web-api/scrape/ai-parsing)                                                                      |
+| Get structured data from Google, Amazon, YouTube, Bing, and more without building a parser | [Web API dedicated scrapers](https://developers.oxylabs.io/products/web-api/scrape/dedicated-scrapers)                                             |
+| Scrape thousands of URLs                                                          | [Web API delivery modes](https://developers.oxylabs.io/products/web-api/scrape/delivery-modes) (async batch)                                                |
+| Give an AI assistant live web search and scraping tools                           | [Web API](https://developers.oxylabs.io/products/web-api) with the [Web API MCP server](https://github.com/oxylabs/web-api-mcp)                             |
+| Give an AI assistant a remote browser to navigate pages, click, fill forms, and take screenshots | [Agent Browser](https://developers.oxylabs.io/products/agent-browser) with the [MCP server](https://github.com/oxylabs/oxylabs-ab-mcp)                |
+| Have my AI coding assistant write correct Oxylabs code                            | [Web API skills](https://github.com/oxylabs/web-api-skills) and [Agent Skills](https://github.com/oxylabs/agent-skills)                                     |
+| Automate or test a website with Playwright or Puppeteer                           | [Agent Browser](https://developers.oxylabs.io/products/agent-browser)                                                                                       |
+| View a site as a visitor from a specific country, city, or ZIP code would         | [Residential Proxies](https://developers.oxylabs.io/products/proxies/residential-proxies)                                                                   |
+| Reach a site that keeps interrupting my existing scraper                          | [Web Unblocker](https://developers.oxylabs.io/products/web-unblocker)                                                                                       |
 
 ## Getting started
 
 Every product follows the same three-step pattern:
 
-1. **Get access.** Create an account in the [dashboard](https://dashboard.oxylabs.io/), choose a product, and select Create instance. Your username and password are generated as soon as you confirm.
-2. **Connect.** Add the product's endpoint to your code or tool. Residential Proxies have an Endpoint Generator, Web Unblocker has a single endpoint, and Agent Browser works with Puppeteer, Playwright, CDP, and MCP clients.
+1. **Get access.** Create an account in the [dashboard](https://dashboard.oxylabs.io/en/registration), choose a product, and select Create instance. Your username and password are generated as soon as you confirm. For Web API you get an API key instead.
+2. **Connect.** Add the product's endpoint to your code or tool. Web API uses `/search` and `/scrape` with a Bearer API key, proxies connect through an entry point (host and port), Residential Proxies also have an Endpoint Generator, Web Unblocker has a single endpoint, and Agent Browser works with Puppeteer, Playwright, CDP, and MCP clients.
 3. **Send your first request.** Run your script and get your data back.
 
 You can optionally cap spending per instance at creation. A new account includes a $5 welcome credit that works on any product.
@@ -216,7 +225,7 @@ Prefer to let your AI assistant handle setup? Install [Agent Skills](https://dev
 
 ## Integrations
 
-Our step-by-step [integration guides](https://developers.oxylabs.io/integrations) cover third-party tools including Playwright, Puppeteer, Scrapy, Selenium, and Postman, plus browser and multi-login tools for proxies.
+Our step-by-step [integration guides](https://developers.oxylabs.io/integrations) cover third-party tools including Playwright, Puppeteer, Scrapy, and Selenium, plus browser and multi-login tools for proxies.
 
 ## Agent Skills and MCP server for AI workflows
 
@@ -239,8 +248,7 @@ One repository, [oxylabs/agent-skills](https://github.com/oxylabs/agent-skills),
 | [`proxies`](https://github.com/oxylabs/agent-skills/blob/main/skills/proxies/SKILL.md) | Generate connection strings, handle entry nodes, and apply geo-targeting, IP rotation, and session persistence |
 | [`agent-browser`](https://github.com/oxylabs/agent-skills/blob/main/skills/agent-browser/SKILL.md) | Control remote browsers via CDP, configure fingerprints, and manage Playwright or Puppeteer automation |
 | [`web-unblocker`](https://github.com/oxylabs/agent-skills/blob/main/skills/web-unblocker/SKILL.md) | Route traffic through the correct gateways, manage custom headers, toggle JavaScript rendering, and configure SSL |
-| [`video-data`](https://github.com/oxylabs/agent-skills/blob/main/skills/video-data/SKILL.md) | Extract video metadata, subtitles, search results, and channel data, and download video or audio via High-Bandwidth Proxies |
-| [`web-scraper-api`](https://github.com/oxylabs/agent-skills/blob/main/skills/web-scraper-api/SKILL.md) | Build request payloads, custom parsing parameters, and geo-targeting fields, and format JSON output |
+
 
 Setup for Claude Desktop and Cursor, the full tool list, and troubleshooting: [Agent Skills docs](https://developers.oxylabs.io/ai-workflows/agent-skills).
 
@@ -255,10 +263,6 @@ Each product has its own MCP server and its own credentials. Set up only the one
 | Agent Browser | `hb-mcp` | Local |
 
 Setup for Claude Desktop and Cursor, the full tool list, and troubleshooting: [MCP docs](https://developers.oxylabs.io/ai-workflows/mcp).
-
-### More AI integrations
-
-[LangChain](https://developers.oxylabs.io/ai-workflows/langchain) and [LlamaIndex](https://developers.oxylabs.io/ai-workflows/llamaindex) integrations work with the Web Scraper API to pull web data into LLM workflows.
 
 ## Custom and open-source solutions
 
