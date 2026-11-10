@@ -98,7 +98,7 @@ Docs: [Proxies overview](https://developers.oxylabs.io/products/proxies) · Repo
 
 ### Agent Browser
 
-[Agent Browser](https://oxylabs.io/products/agent-browser) is a cloud-based headless browser with built-in adaptive security, CAPTCHA management, and residential proxies. Run and control remote browser instances for automation, testing, and web scraping without managing them locally. Connect with Playwright, Puppeteer, or any Chrome DevTools Protocol (CDP) library, including AI agent frameworks such as Stagehand and browser-use.
+[Agent Browser](https://oxylabs.io/products/agent-browser) is managed browser infrastructure that runs browsers in the cloud, so teams building scrapers and AI agents can collect public data from dynamic websites and run multi-step tasks at scale without maintaining browser or proxy infrastructure. Drive it with Playwright and Puppeteer, or let agents control it through MCP, with location set per session on Oxylabs' own ethically sourced proxy network.
 
 Repository: [oxylabs/agent-browser](https://github.com/oxylabs/agent-browser) · Docs: [Agent Browser](https://developers.oxylabs.io/products/agent-browser)
 
